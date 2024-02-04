@@ -39,7 +39,7 @@ text_git = \
     '          mv ../downloads_log ./\n' + \
     '          git init\n' + \
     '          git add ./downloads_log\n' + \
-    '          git commit -m "Update downloads logs\n\n"' + \
+    '          git commit -m "Update downloads logs"\n\n' + \
     '      - name: Push\n' + \
     '        uses: ad-m/github-push-action@master\n' + \
     '        with:\n' + \
