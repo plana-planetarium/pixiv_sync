@@ -67,10 +67,10 @@ jobs:
 
       - name: Git push log
         run: |
-          mkdir ../push_resp
-          mkdir ../push_resp/downloads_log
-          mv ./downloads_log/* ../push_resp/downloads_log/
-          cd ../push_resp
+          mkdir ../downloads_log
+          mv ./downloads_log/* ../downloads_log/
+          cd ..
+          rm -rf pixiv_sync
           git clone https://github.com/plana-planetarium/pixiv_sync.git
           git config --global user.name "plana-planetarium"
           git config --global user.email "3412294524@qq.com"
@@ -78,7 +78,7 @@ jobs:
           rm -rf downloads_log
           mkdir downloads_log
           mv ../downloads_log/* ./downloads_log/
-          rm -rf /home/runner/work/pixiv_sync/push_resp/pixiv_sync/.git/
+          rm -rf /home/runner/work/pixiv_sync/pixiv_sync/.git/
           git init
           git remote add origin git@github.com:plana-planetarium/pixiv_sync.git
           git add ./downloads_log
