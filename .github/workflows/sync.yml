@@ -62,6 +62,7 @@ jobs:
           git config --global user.email "3412294524@qq.com"
           cd pixiv_sync
           rm -rf downloads_log
+          mkdir downloads_log
           mv ../downloads_log/* ./downloads_log/
           git init
           git remote add origin git@github.com:plana-planetarium/pixiv_sync.git
