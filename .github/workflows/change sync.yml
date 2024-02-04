@@ -1,0 +1,48 @@
+name: 自动添加用户至同步程序
+
+on:
+  push:
+    paths:   
+      - 'add.change'
+      - 'example.yml'
+      - '.github/workflows/change sync.yml'
+      
+jobs:
+  change:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    env:
+      #email
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Clone
+        run: |
+          cd ..
+          rm -rf pixiv_sync
+          git clone https://github.com/plana-planetarium/pixiv_sync.git
+
+      - name: Change sync.yml
+        run: |
+          python change.py
+
+      - name: Add
+        run: |
+          git config --global user.name "plana-planetarium"
+          git config --global user.email "3412294524@qq.com"
+          git init
+          git add .github/workflows/
+          git commit -m 'Update sync.yml'
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
+
+      - name: Send Email A.R.O.N.A
+        run: |
+          python change_email.py

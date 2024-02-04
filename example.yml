@@ -1,0 +1,41 @@
+name: 自动同步pixiv上的画师文件
+
+on:
+  #schedule:
+  #  - cron: '0 23 * * *'
+  workflow_dispatch:
+    USERNAME:
+      type: string
+      default: ''
+      description: 'test'
+      required: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      #email
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Git PixivCrawler
+        run: |
+          git clone git@github.com:plana-planetarium/PixivCrawler.git
+
+      - name: Install Dependency
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ./PixivCrawler/requirements.txt
+
+      - name: Downloading
+        continue-on-error: false
+        run: |
+          python main.py
+
