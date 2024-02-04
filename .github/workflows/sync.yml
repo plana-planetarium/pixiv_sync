@@ -55,6 +55,7 @@ jobs:
       - name: Git push log
         run: |
           mkdir ../push_resp
+          mkdir ../push_resp/downloads_log
           mv ./downloads_log/* ../push_resp/downloads_log/
           cd ../push_resp
           git clone https://github.com/plana-planetarium/pixiv_sync.git
