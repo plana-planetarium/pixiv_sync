@@ -79,12 +79,12 @@ for file in require_files:
         user_update = '!!!NO USER NEED TO UPDATE!!!'
         name = '!!!NO USER NEED TO UPDATE!!!'
 
-    email_tool(receiver = email_adress, URL = url_email[:-1], upload_name = name, status_num = '2', name = name, user_update = user_update)
+    email_tool(receiver = email_adress, URL = url_email, upload_name = name, status_num = '2', name = name, user_update = user_update)
 
     os.chdir('../..')
 
     with open('./sync_require/' + file, 'w') as file_open:
-        file_open.write(email_adress + '\n' + url_email + '\n' + name + '\n' + '3' + '\n' + name + '\n' + user_update)
+        file_open.write(email_adress + '\n' + url_email[:-1] + '\n' + name + '\n' + '3' + '\n' + name + '\n' + user_update)
     file_open.close()
 
     with open('./downloads_log/' + file, 'w') as file_open:
