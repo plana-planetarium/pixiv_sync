@@ -39,6 +39,7 @@ text_git = \
     '          rm -rf downloads_log\n' + \
     '          mkdir downloads_log\n' + \
     '          mv ../downloads_log/* ./downloads_log/\n' + \
+    '          rm -rf /home/runner/work/pixiv_sync/push_resp/pixiv_sync/.git/\n' + \
     '          git init\n' + \
     '          git remote add origin git@github.com:plana-planetarium/pixiv_sync.git\n' + \
     '          git add ./downloads_log\n' + \
