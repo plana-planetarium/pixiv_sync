@@ -27,9 +27,7 @@ jobs:
 
       - name: Git PixivCrawler
         run: |
-          cd ..
-          git clone git@github.com:plana-planetarium/PixivCrawler.git
-          mv ./PixivCrawler ./pixiv_sync/
+          git clone https://github.com/plana-planetarium/kemono_sync.git
 
       - name: Install Dependency
         run: |
@@ -58,13 +56,14 @@ jobs:
         run: |
           mv ./downloads_log ../
           cd ..
-          rm -rf pixiv_sync          git clone git@github.com:plana-planetarium/pixiv_sync.git
+          rm -rf pixiv_sync          git clone https://github.com/plana-planetarium/pixiv_sync.git
           git config --global user.name "plana-planetarium"
           git config --global user.email "3412294524@qq.com"
           cd pixiv_sync
           rm -rf downloads_log
           mv ../downloads_log ./
           git init
+          git remote add origin git@github.com:plana-planetarium/pixiv_sync.git
           git add ./downloads_log
           git commit -m "Update downloads logs"
 
