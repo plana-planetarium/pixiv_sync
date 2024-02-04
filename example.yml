@@ -2,7 +2,7 @@ name: 自动同步pixiv上的画师文件
 
 on:
   schedule:
-    - cron: '0 23/11 * * *'
+    - cron: '0 23,11 * * *'
 #  workflow_dispatch:
 #   USERNAME:
 #      type: string
