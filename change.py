@@ -36,6 +36,7 @@ text_git = \
     '          git config --global user.email "3412294524@qq.com"\n' + \
     '          cd pixiv_sync\n' + \
     '          rm -rf downloads_log\n' + \
+    '          mkdir downloads_log\n' + \
     '          mv ../downloads_log/* ./downloads_log/\n' + \
     '          git init\n' + \
     '          git remote add origin git@github.com:plana-planetarium/pixiv_sync.git\n' + \
