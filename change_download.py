@@ -33,11 +33,11 @@ def change_program(url_id, name):
             '    "N_THREAD": 32,\n' + \
             '    "THREAD_DELAY": 1,\n' + \
             '}'
-    with open('./PixivCrawler/config.py', 'w') as config_write:
+    with open('./PixivCrawler/pixiv_crawler/config.py', 'w') as config_write:
         config_write.write(example_config)
     config_write.close()
     
-    with open('./PixivCrawler/run.py', 'w') as config_run:
+    with open('./PixivCrawler/pixiv_crawler/run.py', 'w') as config_run:
         config_run.write(example_run)
     config_run.close()
 
