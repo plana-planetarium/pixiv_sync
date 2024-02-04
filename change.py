@@ -28,10 +28,10 @@ for name in name_list:
 text_git = \
     '      - name: Git push log\n' + \
     '        run: |\n' + \
-    '          mkdir ../push_resp\n' + \
-    '          mkdir ../push_resp/downloads_log\n' + \
-    '          mv ./downloads_log/* ../push_resp/downloads_log/\n' + \
-    '          cd ../push_resp\n' + \
+    '          mkdir ../downloads_log\n' + \
+    '          mv ./downloads_log/* ../downloads_log/\n' + \
+    '          cd ..\n' + \
+    '          rm -rf pixiv_sync\n' + \
     '          git clone https://github.com/plana-planetarium/pixiv_sync.git\n' + \
     '          git config --global user.name "plana-planetarium"\n' + \
     '          git config --global user.email "3412294524@qq.com"\n' + \
@@ -39,7 +39,7 @@ text_git = \
     '          rm -rf downloads_log\n' + \
     '          mkdir downloads_log\n' + \
     '          mv ../downloads_log/* ./downloads_log/\n' + \
-    '          rm -rf /home/runner/work/pixiv_sync/push_resp/pixiv_sync/.git/\n' + \
+    '          rm -rf /home/runner/work/pixiv_sync/pixiv_sync/.git/\n' + \
     '          git init\n' + \
     '          git remote add origin git@github.com:plana-planetarium/pixiv_sync.git\n' + \
     '          git add ./downloads_log\n' + \
