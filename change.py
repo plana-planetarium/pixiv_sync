@@ -30,7 +30,7 @@ text_git = \
     '        run: |\n' + \
     '          mv ./downloads_log ../\n' + \
     '          cd ..\n' + \
-    '          rm -rf pixiv_sync' + \
+    '          rm -rf pixiv_sync\n' + \
     '          git clone https://github.com/plana-planetarium/pixiv_sync.git\n' + \
     '          git config --global user.name "plana-planetarium"\n' + \
     '          git config --global user.email "3412294524@qq.com"\n' + \
