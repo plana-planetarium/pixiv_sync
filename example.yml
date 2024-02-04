@@ -27,7 +27,7 @@ jobs:
 
       - name: Git PixivCrawler
         run: |
-          git clone https://github.com/plana-planetarium/kemono_sync.git
+          git clone https://github.com/plana-planetarium/PixivCrawler.git
 
       - name: Install Dependency
         run: |
