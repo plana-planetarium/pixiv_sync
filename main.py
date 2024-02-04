@@ -75,11 +75,11 @@ for file in require_files:
     user_update = str(user_update).replace('[', '').replace(']', '').replace("'", '')
 
     if user_update == '':
-        url_email = '!!!NO USER NEED TO UPDATE!!!'
+        url_email = '!!!NO USER NEED TO UPDATE!!!\n'
         user_update = '!!!NO USER NEED TO UPDATE!!!'
         name = '!!!NO USER NEED TO UPDATE!!!'
 
-    email_tool(receiver = email_adress, URL = url_email, upload_name = name, status_num = '2', name = name, user_update = user_update)
+    email_tool(receiver = email_adress, URL = url_email[:-1], upload_name = name, status_num = '2', name = name, user_update = user_update)
 
     os.chdir('../..')
 
