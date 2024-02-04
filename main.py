@@ -31,7 +31,7 @@ for file in require_files:
     with open('./downloads_log/' + file, 'r') as file_open:
         text = file_open.read()
     file_open.close()
-    down_log = text.replace(' ', '').split(',')
+    down_log = text.split(',')
     #NOTE down_log --> 以跟新过的图片文件名
 
 
