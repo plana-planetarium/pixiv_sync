@@ -53,12 +53,12 @@ for file in require_files:
         os.chdir('../..')
         change_program(url_id, name)
 
-        os.chdir('./PixivCrawler')
+        os.chdir('./PixivCrawler/pixiv_crawler')
         os.system('python run.py')
 
     #email_tool(receiver = email_adress, URL = url_email, upload_name = name, status_num = '2', name = name, user_update = '')
 
-    os.chdir('../Downloads/' + name)
+    os.chdir('../../Downloads/' + name)
 
     down_user = os.listdir('./')
     #user_update = os.listdir('./') 

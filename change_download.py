@@ -1,9 +1,6 @@
 def change_program(url_id, name):
     example_run = \
             'from config import DOWNLOAD_CONFIG\n' + \
-            'from crawlers.bookmark_crawler import BookmarkCrawler\n' + \
-            'from crawlers.keyword_crawler import KeywordCrawler\n' + \
-            'from crawlers.ranking_crawler import RankingCrawler\n' + \
             'from crawlers.users_crawler import UserCrawler\n' + \
             'from utils import checkDir\n' + \
             'import os\n' + \
@@ -29,7 +26,7 @@ def change_program(url_id, name):
             '    "COOKIE": os.getenv("PIXIV_COOKIE")\n' + \
             '}\n' + \
             'DOWNLOAD_CONFIG = {\n' + \
-            '    "STORE_PATH": "../Downloads/%s/",\n' %name + \
+            '    "STORE_PATH": "../../Downloads/%s/",\n' %name + \
             '    "N_TIMES": 10,\n' + \
             '    "WITH_TAG": False,\n' + \
             '    "FAIL_DELAY": 1,\n' + \

@@ -6,6 +6,7 @@ on:
       - 'add.change'
       - 'example.yml'
       - '.github/workflows/change sync.yml'
+      - 'change.py'
       
 jobs:
   change:
