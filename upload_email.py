@@ -14,6 +14,12 @@ if if_file == []:
     upload_name = '!!!NO FILE NEED TO UPLOAD!!!'
 else:
     upload_name = text[2]
-    
 
-email_tool(receiver = text[0], URL = text[1], upload_name = upload_name, status_num = text[3], name = text[4], user_update = text[5])
+i = 1
+
+email_url = ''
+while i <= len(text)-5:
+    email_url += text[i] + '\n'
+    i += 1
+
+email_tool(receiver = text[0], URL = text[1], upload_name = upload_name, status_num = text[-3], name = text[-2], user_update = text[-1])
