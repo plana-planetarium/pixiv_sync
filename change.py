@@ -29,6 +29,7 @@ text_git = \
     '      - name: Git push log\n' + \
     '        run: |\n' + \
     '          mkdir ../push_resp\n' + \
+    '          mkdir ../push_resp/downloads_log\n' + \
     '          mv ./downloads_log/* ../push_resp/downloads_log/\n' + \
     '          cd ../push_resp\n' + \
     '          git clone https://github.com/plana-planetarium/pixiv_sync.git\n' + \

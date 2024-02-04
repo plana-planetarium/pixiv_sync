@@ -70,7 +70,11 @@ for file in require_files:
     user_update = down_user_list
         
     #NOTE 现在所处目录:Downloads/name/
-    #     user_update --> list 包含所更新画师的昵称
+    #     user_update --> list 包含所更新画师的PIC
+
+    for rm_file in down_log:
+        if rm_file != '':
+            os.system('rm ' + rm_file)
     
     user_update = str(user_update).replace('[', '').replace(']', '').replace("'", '')
 
