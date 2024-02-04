@@ -79,6 +79,7 @@ jobs:
           mkdir downloads_log
           mv ../downloads_log/* ./downloads_log/
           rm -rf /home/runner/work/pixiv_sync/pixiv_sync/.git/
+          git pull
           git init
           git remote add origin git@github.com:plana-planetarium/pixiv_sync.git
           git add ./downloads_log
