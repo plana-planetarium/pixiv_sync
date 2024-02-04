@@ -27,7 +27,9 @@ jobs:
 
       - name: Git PixivCrawler
         run: |
+          cd ..
           git clone git@github.com:plana-planetarium/PixivCrawler.git
+          mv ./PixivCrawler ./pixiv_sync/
 
       - name: Install Dependency
         run: |
