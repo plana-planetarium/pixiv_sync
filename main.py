@@ -21,7 +21,7 @@ for file in require_files:
     while i <= len(text)-1:
         if text[i] != '':
             url += [text[i]]
-            url_email += text[i] + '\n'
+            url_email += text[i] + ','
         i += 2
     #NOTE name --> 需求中填写的昵称
     #     email_adress --> 邮箱地址
@@ -66,9 +66,8 @@ for file in require_files:
     all_file = str(down_user).replace('[', '').replace(']', '').replace("'", '')
 
     #down_user_list = [i for i in down_user if i not in down_log]
-    down_user_list = list(set(down_user) ^ set(down_log))
-    down_user = down_user_list
-    user_update = down_user_list
+    #down_user = down_user_list
+    #user_update = down_user_list
         
     #NOTE 现在所处目录:Downloads/name/
     #     user_update --> list 包含所更新画师的PIC
@@ -76,6 +75,9 @@ for file in require_files:
     for rm_file in down_log:
         if rm_file != '':
             os.system('rm ' + rm_file)
+
+    down_user = os.listdir('./')
+    user_update = down_user
     
     user_update = str(user_update).replace('[', '').replace(']', '').replace("'", '')
 
