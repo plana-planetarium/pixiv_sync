@@ -65,7 +65,8 @@ for file in require_files:
 
     all_file = str(down_user).replace('[', '').replace(']', '').replace("'", '')
 
-    down_user_list = [i for i in down_user if i not in down_log]
+    #down_user_list = [i for i in down_user if i not in down_log]
+    down_user_list = list(set(down_user) ^ set(down_log))
     down_user = down_user_list
     user_update = down_user_list
         
