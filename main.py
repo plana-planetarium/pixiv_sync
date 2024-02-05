@@ -21,7 +21,7 @@ for file in require_files:
     while i <= len(text)-1:
         if text[i] != '':
             url += [text[i]]
-            url_email += text[i] + ','
+            url_email += text[i] + ', '
         i += 2
     #NOTE name --> 需求中填写的昵称
     #     email_adress --> 邮箱地址
@@ -35,7 +35,7 @@ for file in require_files:
     #NOTE down_log --> 以跟新过的图片文件名
 
 
-    email_tool(receiver = email_adress, URL = url_email, upload_name = name, status_num = '1', name = name, user_update = '')
+    email_tool(receiver = email_adress, URL = url_email[:-2], upload_name = name, status_num = '1', name = name, user_update = '')
 
     os.system('''mkdir "./Downloads/''' + name + '''"''')
     os.chdir('./Downloads/' + name)
@@ -43,9 +43,6 @@ for file in require_files:
     for file_log in down_log:
         if file_log != '':
             os.system('echo " " > ' + file_log)
-
-    
-
 
     #NOTE https://www.pixiv.net/users/16034374
     for url_download in url:
@@ -82,16 +79,16 @@ for file in require_files:
     user_update = str(user_update).replace('[', '').replace(']', '').replace("'", '')
 
     if user_update == '':
-        url_email = '!!!NO USER NEED TO UPDATE!!!\n'
+        url_email = '!!!NO USER NEED TO UPDATE!!!..'
         user_update = '!!!NO USER NEED TO UPDATE!!!'
         name = '!!!NO USER NEED TO UPDATE!!!'
 
-    email_tool(receiver = email_adress, URL = url_email, upload_name = name, status_num = '2', name = name, user_update = user_update)
+    email_tool(receiver = email_adress, URL = url_email[:-2], upload_name = name, status_num = '2', name = name, user_update = user_update)
 
     os.chdir('../..')
 
     with open('./sync_require/' + file, 'w') as file_open:
-        file_open.write(email_adress + '\n' + url_email[:-1] + '\n' + name + '\n' + '3' + '\n' + name + '\n' + user_update)
+        file_open.write(email_adress + '\n' + url_email[:-2] + '\n' + name + '\n' + '3' + '\n' + name + '\n' + user_update)
     file_open.close()
 
     with open('./downloads_log/' + file, 'w') as file_open:
