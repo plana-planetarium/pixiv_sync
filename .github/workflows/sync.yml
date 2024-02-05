@@ -52,6 +52,19 @@ jobs:
           export NAME_USER="A.R.O.N.A"
           python upload_email.py
 
+
+      - name: Upload File EnMa0
+        uses: actions/upload-artifact@v3
+        with:
+          name: EnMa0
+          path: ./Downloads/EnMa0/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Send Email EnMa0
+        run: |
+          export NAME_USER="EnMa0"
+          python upload_email.py
+
       - name: Git push log
         run: |
           rm -rf ./PixivCrawler
