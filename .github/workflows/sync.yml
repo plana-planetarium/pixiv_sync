@@ -17,6 +17,8 @@ jobs:
       #email
       EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+      PIXIV_COOKIE: ${{ secrets.PIXIV_COOKIE }}
+      PIXIV_ID: ${{ secrets.PIXIV_ID }}
 
     steps:
       - uses: actions/checkout@v3
