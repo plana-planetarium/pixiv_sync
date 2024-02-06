@@ -1,14 +1,14 @@
 name: 自动同步pixiv上的画师文件
 
 on:
-  #schedule:
-  #  - cron: '0 11 * * *'
-  workflow_dispatch:
-   USERNAME:
-      type: string
-      default: ''
-      description: 'test'
-      required: false
+  schedule:
+    - cron: '0 11 * * *'
+  #workflow_dispatch:
+  # USERNAME:
+  #    type: string
+  #    default: ''
+  #    description: 'test'
+  #    required: false
 
 jobs:
   update:
