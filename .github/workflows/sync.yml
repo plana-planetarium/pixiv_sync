@@ -40,16 +40,16 @@ jobs:
           python main.py
 
 
-      - name: Upload File A.R.O.N.A
+      - name: Upload File A.R.O.N.A 唐可可
         uses: actions/upload-artifact@v3
         with:
-          name: A.R.O.N.A
-          path: ./Downloads/A.R.O.N.A/
+          name: A.R.O.N.A 唐可可
+          path: ./Downloads/A.R.O.N.A 唐可可/
           if-no-files-found: ignore
           retention-days: 7
-      - name: Send Email A.R.O.N.A
+      - name: Send Email A.R.O.N.A 唐可可
         run: |
-          export NAME_USER="A.R.O.N.A"
+          export NAME_USER="A.R.O.N.A 唐可可"
           python upload_email.py
 
       - name: Git push log
