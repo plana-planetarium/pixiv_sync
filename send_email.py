@@ -31,7 +31,7 @@ def email_tool(receiver, URL, upload_name, status_num, name, user_update):
     #if input_id != '':
     #        receiver =  receiver + ', ' + input_id
     #
-    receivers = receiver.replace(' ','')
+    receivers = receiver.replace(' ','').split(',')
     
     def get_text(status, next_status):
         text = \

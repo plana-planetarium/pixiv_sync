@@ -12,7 +12,7 @@ for file in require_files:
     file_open.close()
     text = text.split('\n')
     i = 0
-    name = text[i].replace('#', '').replace(' ', '')
+    name = text[i].replace('## ', '')
     i += 1
     email_adress = text[i].replace('#', '').replace(' ', '')
     i += 1
