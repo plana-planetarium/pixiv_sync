@@ -29,13 +29,13 @@ for file in require_files:
 
     email_tool(receiver = email_adress, URL = url_email[:-2], upload_name = name, status_num = '1', name = name, user_update = '')
 
+    os.environ['USER_NAME'] = '../../Downloads/' + name + '/'
+    os.chdir('./PixivCrawler/pixiv_crawler/')
     #NOTE https://www.pixiv.net/users/16034374
     for url_download in url:
         url_id = url_download.replace('https://www.pixiv.net/users/', '')
         os.environ['USER_ID'] = url_id
-        os.environ['USER_NAME'] = '../../Downloads/' + name + '/'
 
-        os.chdir('./PixivCrawler/pixiv_crawler')
         os.system('python run.py')
 
     os.chdir('../../Downloads/' + name)
