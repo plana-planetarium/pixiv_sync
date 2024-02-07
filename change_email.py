@@ -5,21 +5,23 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import os
 
+github_action = 'https://github.com/plana-planetarium/pixiv_sync/actions'
+
 mail_host = 'smtp.qq.com'
 mail_user = os.getenv('EMAIL_USERNAME').replace('@qq.com', '')
 mail_pass = os.getenv('EMAIL_PASSWORD')
 
 sender = os.getenv('EMAIL_USERNAME')
 
-text = '[plana-planetarium/pixiv_sync] 自动添加用户至同步程序 successfully\n\n'
-subject = '[plana-planetarium/pixiv_sync] 自动添加用户至同步程序 successfully'
+text = '[%s] 自动添加用户至同步程序 successfully\n\n' % (github_action.replace('https://github.com/', '').replace('/actions', '').replace('/actions/', ''))
+subject = '[%s] 自动添加用户至同步程序 successfully' % (github_action.replace('https://github.com/', '').replace('/actions', '').replace('/actions/', ''))
 
 def message_config():
     content = MIMEText(text)
     message = MIMEMultipart()
     message.attach(content)
-    message['From'] = 'A.R.O.N.A' + '<'+ sender + '>'
-    message['To']   = 'A.R.O.N.A'
+    message['From'] = 'Pixiv Sync Notice' + '<'+ sender + '>'
+    message['To']   = 'Admin'
     message['Subject'] = Header(subject, 'utf-8')
 
     return message

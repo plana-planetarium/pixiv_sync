@@ -1,14 +1,14 @@
 name: 自动同步pixiv上的画师文件
 
 on:
-  schedule:
-    - cron: '0 11 * * *'
-  #workflow_dispatch:
-  # USERNAME:
-  #    type: string
-  #    default: ''
-  #    description: 'test'
-  #    required: false
+  #schedule:
+  #  - cron: '0 11 * * *'
+  workflow_dispatch:
+   USERNAME:
+      type: string
+      default: ''
+      description: 'test'
+      required: false
 
 jobs:
   update:
@@ -26,10 +26,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-
-      - name: Git PixivCrawler
-        run: |
-          git clone https://github.com/plana-planetarium/PixivCrawler.git
 
       - name: Install Dependency
         run: |
