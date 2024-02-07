@@ -25,25 +25,6 @@ for name in name_list:
     '          python upload_email.py\n\n'
     text_end += change_part
 
-text_git = \
-    '      - name: Git push log\n' + \
-    '        run: |\n' + \
-    '          rm -rf ./PixivCrawler\n' + \
-    '          rm -rf ./Downloads\n' + \
-    '          git config --global user.name "plana-planetarium"\n' + \
-    '          git config --global user.email "3412294524@qq.com"\n' + \
-    '          git init\n' + \
-    '          git remote remove origin\n' + \
-    '          git remote add origin git@github.com:plana-planetarium/pixiv_sync.git\n' + \
-    '          git add ./downloads_log\n' + \
-    '          git commit -m "Update downloads logs"\n\n' + \
-    '      - name: Push\n' + \
-    '        uses: ad-m/github-push-action@master\n' + \
-    '        with:\n' + \
-    '          github_token: ${{ secrets.TOKEN }}\n'
-
-text = text + text_end + text_git
-
 with open('.github/workflows/sync.yml', 'w') as sync_write:
     sync_write.write(text)
 sync_write.close()
