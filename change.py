@@ -25,6 +25,8 @@ for name in name_list:
     '          python upload_email.py\n\n'
     text_end += change_part
 
+text = text + text_end
+
 with open('.github/workflows/sync.yml', 'w') as sync_write:
     sync_write.write(text)
 sync_write.close()
