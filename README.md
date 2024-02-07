@@ -16,17 +16,18 @@
 
 - PIXIV_ID: 你的pixiv帐号
 
-- PIXIV_COOKIE: 你的pixiv COOKIE,获取方法见PixivCrawler的README中"COOKIE"项的设置
-
-#### 邮件推送设置
-
-##### 添加actions变量(secrets)
+- PIXIV_COOKIE: 你的pixiv COOKIE，获取方法见PixivCrawler的README中"COOKIE"项的设置
 
 - EMAIL_USERNAME: 邮箱小号(用于推送)
 
 - EMAIL_PASSWORD: 邮箱小号SMTP授权码
 
+- TOKEN: Github TOKEN，需要有写入等权限
+
 - 注：默认使用的是QQ邮箱，如须更改邮箱SMTP服务器请修改`send_email.py`中`mail_host = 'smtp.qq.com'`和`mail_user = os.getenv('EMAIL_USERNAME').replace('@qq.com', '')`
+
+
+#### 邮件推送设置
 
 ##### 修改`send_email.py`
 
@@ -45,7 +46,6 @@
 - 新建一个txt文本文档，标题为你的昵称(注意满足文件及文件夹命名规范)，后缀为txt
 
 - 按照以下格式写入信息(注意#和空格)
-
 
 ```
 ## name (你的昵称，和文本文档昵称保持一致)
