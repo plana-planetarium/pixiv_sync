@@ -2,7 +2,7 @@ import os
 import datetime
 from send_email import email_tool
 
-os.environ['SET_TIME'] = str(datetime.date.today() - datetime.timedelta(days=1)).replace('-', '/')
+os.environ['SET_TIME'] = str(datetime.date.today() + datetime.timedelta(days=1)).replace('-', '/')
 
 require_files = os.listdir('./sync_require')
 for file in require_files:
